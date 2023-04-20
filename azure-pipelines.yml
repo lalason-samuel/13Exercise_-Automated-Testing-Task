@@ -24,6 +24,9 @@ stages:
       displayName: Run regression Tests
       continueOnError: true
       inputs:
-        script: 'newman run StarterAPIs.json'
+        script: |
+          pwd
+          ls -lh
+          nodejs --version
         workingDirectory: '$(Build.SourcesDirectory)'
     
