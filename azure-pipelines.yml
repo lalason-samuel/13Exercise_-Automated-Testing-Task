@@ -28,5 +28,6 @@ stages:
           pwd
           ls -lh
           nodejs --version
+          newman run starterapis.json
         workingDirectory: '$(Build.SourcesDirectory)'
     
