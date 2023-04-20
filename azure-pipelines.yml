@@ -6,6 +6,15 @@ stages:
     pool: myAgentPool
     steps:
     - task: CmdLine@2
+      displayName: Installation all dependance
+      continueOnError: true
+      inputs:
+        script: |
+          sudo apt update
+          sudo apt install nodejs npm -y
+          nodejs --version
+        workingDirectory: $(System.DefaultWorkingDirectory)
+    - task: CmdLine@2
       displayName: Installation Newman
       continueOnError: true
       inputs:
